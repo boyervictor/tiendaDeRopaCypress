@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/*const cypress = require("cypress");
+const { values } = require("cypress/types/lodash");*/
+
+Cypress.Commands.add('search',(value)=>{//en este archivo Command guardaremos el comando search
+    cy.fixture('index').then((indexAlias)=>{
+        cy.get(indexAlias.searchBox).type(value);// reemplazo dress x value es decir un parametro no fijo y buscar cuaquier cosa
+        cy.get(indexAlias.searchButton).click();
+      })
+      /*cy.fixture('index').then((indexAlias)=>{
+        cy.get(indexAlias.searchBox).type('qwerty');
+        cy.get(indexAlias.searchButton).click();
+      })*/
+})

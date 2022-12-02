@@ -1,0 +1,1 @@
+leyendo un archivo de texto desde un file 
